@@ -1,3 +1,9 @@
+var days =
+  Math.floor((new Date() - new Date('1986-10-02')) / (1000 * 60 * 60 * 24))
+var awake = () => {
+  var h = new Date().getHours()
+  return (h < 8 || h > 20) ? 'asleep' : 'awake'
+}
 module.exports = {
   name: 'Sean Berrie',
   githubUsername: 'seanberrie',
@@ -14,6 +20,8 @@ module.exports = {
   {
     name: 'Dusty',
     type: 'Dog',
-    toy: 'stick'
+    toy: 'stick',
+    daysold: `${days}`,
+    isAwake: `${awake()}`
   }]
 }
